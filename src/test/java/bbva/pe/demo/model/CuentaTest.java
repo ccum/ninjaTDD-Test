@@ -88,5 +88,16 @@ public class CuentaTest {
 		cuenta.ingreso(6000.01);
 		assertEquals("El saldo de la cuenta no es correcto",0,cuenta.getSaldo(),0);
 	}
+	@Test
+	public void ingresoMasDe6000NoEsValidoAlIngresar7000EnCuentaCon2350ElSaldoSeQuedaEn2350(){
+		Cuenta cuenta = new Cuenta();
+		cuenta.ingreso(2350);
+		
+		cuenta.ingreso(7000);
+		assertEquals("El saldo de la cuenta no es correcto",2350,cuenta.getSaldo(),0);
+	}
+	
+	
+	
 
 }

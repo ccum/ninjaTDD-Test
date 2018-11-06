@@ -24,9 +24,7 @@ public class Cuenta {
 		if(esValida) {
 			this.saldo = this.saldo + cantidad;
 		}
-		else {
-			this.saldo =0;
-		}
+
 	}
 
 	private boolean esCantidadValida(double cantidad) {
