@@ -2,7 +2,7 @@ package bbva.pe.demo.model;
 
 public class Cuenta {
 
-	private int saldo;
+	private double saldo;
 	
 	
 	
@@ -12,12 +12,12 @@ public class Cuenta {
 	}
 
 
-	public int getSaldo() {
+	public double getSaldo() {
 		return this.saldo;
 	}
 
 
-	public void ingreso(int cantidad) {
+	public void ingreso(double cantidad) {
 		if(cantidad<0) {
 			this.saldo=0;
 		}else {
@@ -25,5 +25,6 @@ public class Cuenta {
 		}
 		
 	}
+	
 
 }
