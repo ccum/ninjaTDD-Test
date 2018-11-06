@@ -26,7 +26,11 @@ public class Cuenta {
 		}
 		else if(cantidad<0) {
 			this.saldo=0;
-		}else {
+		}
+		else if(cantidad>6000) {
+			this.saldo=0;
+		}
+		else {
 			this.saldo = this.saldo + cantidad;
 		}
 		
