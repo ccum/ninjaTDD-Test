@@ -36,8 +36,23 @@ public class CuentaTest {
 		//Arrange (Set Up)
 		Cuenta cuenta = new Cuenta();
 		cuenta.ingreso(100);
+		
+		//Act = Acciones
 		cuenta.ingreso(3000);
+		
+		//Assert
 		assertEquals(cuenta.getSaldo(),3100);
+		
+	}
+	
+	@Test
+	public void noSePuedeIngresarCantidadNegativa() {
+		//arrange
+		Cuenta cuenta = new Cuenta();
+		
+		cuenta.ingreso(-100);
+		
+		assertEquals(cuenta.getSaldo(),0);
 		
 	}
 }

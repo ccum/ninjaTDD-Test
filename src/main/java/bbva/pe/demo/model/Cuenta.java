@@ -17,8 +17,12 @@ public class Cuenta {
 	}
 
 
-	public void ingreso(int i) {
-		this.saldo = this.saldo + i;
+	public void ingreso(int cantidad) {
+		if(cantidad<0) {
+			this.saldo=0;
+		}else {
+			this.saldo = this.saldo + cantidad;
+		}
 		
 	}
 
