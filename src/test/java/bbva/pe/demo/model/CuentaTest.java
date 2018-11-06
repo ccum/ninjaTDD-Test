@@ -60,10 +60,19 @@ public class CuentaTest {
 	}
 	
 	@Test
-	public void IngresoCantidad2Decimales() {
+	public void ingresoCantidad2Decimales() {
 		Cuenta cuenta = new Cuenta();
 		cuenta.ingreso(100.45);
 		//assertEquals(cuenta.getSaldo(),100.45);
 		assertEquals("El saldo de la cuenta no es correcto",100.45,cuenta.getSaldo(),0);
 	}
+	
+	@Test
+	public void ingresoCantidadMasDe2DecimalesNoEsValido() {
+		Cuenta cuenta = new Cuenta();
+		cuenta.ingreso(100.457);
+		assertEquals("El saldo de la cuenta no es correcto",0,cuenta.getSaldo(),0);
+	}
+	
+
 }

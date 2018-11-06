@@ -1,5 +1,7 @@
 package bbva.pe.demo.model;
 
+import java.text.DecimalFormat;
+
 public class Cuenta {
 
 	private double saldo;
@@ -18,7 +20,11 @@ public class Cuenta {
 
 
 	public void ingreso(double cantidad) {
-		if(cantidad<0) {
+		if(formatearDecimales(cantidad,2)!=cantidad)
+		{
+			this.saldo=0;
+		}
+		else if(cantidad<0) {
 			this.saldo=0;
 		}else {
 			this.saldo = this.saldo + cantidad;
@@ -26,5 +32,8 @@ public class Cuenta {
 		
 	}
 	
+	private static Double formatearDecimales(Double numero, Integer numeroDecimales) {
+		return Math.round(numero * Math.pow(10, numeroDecimales)) / Math.pow(10, numeroDecimales);
+	}
 
 }
