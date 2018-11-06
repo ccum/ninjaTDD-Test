@@ -20,20 +20,27 @@ public class Cuenta {
 
 
 	public void ingreso(double cantidad) {
-		if(formatearDecimales(cantidad,2)!=cantidad)
-		{
-			this.saldo=0;
-		}
-		else if(cantidad<0) {
-			this.saldo=0;
-		}
-		else if(cantidad>6000) {
-			this.saldo=0;
-		}
-		else {
+		boolean esValida=esCantidadValida(cantidad);
+		if(esValida) {
 			this.saldo = this.saldo + cantidad;
 		}
-		
+		else {
+			this.saldo =0;
+		}
+	}
+
+	private boolean esCantidadValida(double cantidad) {
+		if(formatearDecimales(cantidad,2)!=cantidad)
+		{
+			return false;
+		}
+		if(cantidad<0) {
+			return false;
+		}
+		if(cantidad>6000) {
+			return false;
+		}
+		return true;
 	}
 	
 	private static Double formatearDecimales(Double numero, Integer numeroDecimales) {
