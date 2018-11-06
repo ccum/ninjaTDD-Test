@@ -74,5 +74,13 @@ public class CuentaTest {
 		assertEquals("El saldo de la cuenta no es correcto",0,cuenta.getSaldo(),0);
 	}
 	
+	//TEST NO APORTA NADA
+	@Test
+	public void ingresoMaximoEsDe6000() {
+		Cuenta cuenta = new Cuenta();
+		cuenta.ingreso(6000);
+		assertEquals("El saldo de la cuenta no es correcto",6000,cuenta.getSaldo(),0);
+	}
+	
 
 }
